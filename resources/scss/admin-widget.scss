@@ -1,0 +1,160 @@
+@import 'tag';
+
+.elex-ws-chat-side-panel {
+    width: 350px;
+    min-width: 310px;
+
+    .elex-ws-chat-contact-list{
+        height: calc(100% - 200px);
+        overflow-y: auto;
+
+
+    }
+}
+
+.elex-ws-chat-main-content {
+    @import 'converstaion-container.scss';
+    .elex-ws-chat-send-btn {
+        background: var(--wschat-bg-primary)!important;
+        color: var(--wschat-icon-color)!important;
+        svg * {
+            stroke: var(--wschat-icon-color) !important;
+        }
+
+        &.disabled {
+            color: #5e5e5e;
+            background: transparent;
+            border-radius: 10px !important;
+            svg * {
+                stroke: #5e5e5e !important;
+            }
+        }
+    }
+    .elex-ws-chat-email {
+        width: 100%;
+        z-index: 99;
+        bottom: 0;
+        right: -100%;
+        height: auto;
+        transition: 0.4s ease;
+        background: $light;
+    }
+    .elex-ws-chat-email.active {
+        right: 0;
+        visibility: visible;
+        transition: 0.4s ease;
+    }
+
+
+    .elex-ws-chat-convo-attach-file-loader,
+    .elex-ws-chat-convo-attached-file {
+        display: none;
+    }
+    .elex-ws-chat-convo-attach-file-loader.active,
+    .elex-ws-chat-convo-attached-file.active {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// .elex-ws-chat-diff-inputs.active {
+//     position: absolute;
+//     height: auto;
+//     bottom: 45px;
+//     opacity: 1;
+//     visibility: visible;
+//     left: 0;
+//     transition: .6s ease;
+// }
+// popup css
+.elex-ws-chat-popup {
+    position: absolute;
+    width: 390px;
+    height: 100%;
+    right: -100%;
+    z-index: 9;
+    transition: 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+    .elex-ws-chat-customer-info-content{
+        width: 390px;
+        min-height: 100%;
+        .elex-ws-chat-order {
+            .elex-ws-chat-hover-order {
+                left: 0;
+                top: 0;
+                display: none;
+                z-index: 2;
+                background-color: #fff;
+            }
+        }
+        .elex-ws-chat-order:hover {
+            .elex-ws-chat-hover-order {
+                left: calc(-100% - 15px);
+                top: 100%;
+                min-height: 65px;
+                display: block;
+            }
+        }
+    }
+
+}
+
+.elex-ws-chat-popup.active {
+    position: absolute;
+    width: 350px;
+    height: 100%;
+    right: 0;
+    transition: 0.4s ease;
+}
+
+.message-item-text a {
+	color: #333;
+}
+
+.add-agent-container input {
+	box-shadow: none !important;
+}
+
+// end chat button color
+.elex-wschat-back-btn,
+#elex-ws-chat-end-toast-msg-btn{
+    color: var(--wschat-icon-color) !important;
+    border-color:var(--wschat-icon-color) !important;
+
+    svg *{
+        stroke: var(--wschat-icon-color) !important;
+        fill: var(--wschat-icon-color) !important;
+    }
+}
+
+// tooltip
+.tooltip-outline-primary.tooltip {
+    .tooltip-inner {
+        border: none;
+        box-shadow: 0px 0px 3px var(--wschat-bg-primary);
+        background: var(--wschat-bg-primary);
+        color: var(--wschat-text-primary);
+        font-size: 0.7rem;
+    }
+    .tooltip-arrow::before {
+        display: none;
+    }
+  }
+
+
+.elex-wschat-tags-li:hover{
+    background-color: $light;
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+//
+.elex-wschat-tag-active{
+	svg *{
+		stroke: $primary;
+	}
+
+}

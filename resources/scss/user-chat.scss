@@ -1,0 +1,124 @@
+.wschat-popup {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    //width: 300px;
+    z-index: 99999;
+
+    .wschat-chat-toggle  i{
+    	font-size: 2em !important;
+    }
+
+    .friend-drawer.p-0:after {
+    	display: none;
+    }
+
+    .wschat-popup-content {
+    	display: none;
+    }
+
+        .icon-chat {
+            display: block;
+        }
+
+        .icon-close {
+            display: none;
+        }
+
+    &.show-on {
+    	width: 100%;
+		margin: 0;
+
+		@include media-breakpoint-up(sm) {
+    		max-width: 350px;
+    		margin: 1rem;
+
+            .chat-bubble {
+                &--right {
+                    margin-left: 0
+                }
+                &--left {
+                    margin-right: 0;
+                }
+            }
+		}
+
+    	.wschat-popup-content {
+    		display: block;
+    	}
+
+        .icon-chat {
+            display: none;
+        }
+
+        .icon-close {
+            display: block;
+        }
+		.wschat-fab {
+			display: none;
+		}
+    }
+
+    .chat-box-tray {
+        margin: 0;
+    }
+
+    .chat-panel {
+        border: 1px solid var(--wschat-bg-secondary);
+		background-color: #fff;
+    }
+
+	.chat-panel, .conversation-list, .pre-chat-panel {
+    	overflow-y: auto;
+    	min-height: 250px;
+    	max-height: 250px;
+	}
+
+	.wschat-fab {
+        position: relative;
+		padding: 0.8rem;
+		background-color: var(--wschat-bg-primary);
+		line-height: 0;
+		color: var(--wschat-text-primary);
+
+        &:focus {
+            outline: none;
+        }
+
+        .badge {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: red;
+        }
+	}
+
+    .attachment-list {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        .attachment-list-item {
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.15s cubic-bezier(0.55, 0.09, 0.68, 0.53);
+            background-color: var(--wschat-bg-primary);
+            color: var(--wschat-text-primary);
+            width: 2rem;
+            height: 2rem;
+            padding: 0.15em !important;
+            margin: 0.35rem !important;
+            margin-right:0 !important;
+            border-radius: 50%;
+
+            i {
+                font-size: 1.5rem;
+            }
+
+            &.show {
+                transform: none;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "/resources/dist/user-chat.js": "/resources/dist/user-chat.js",
+    "/resources/dist/admin-chat.js": "/resources/dist/admin-chat.js",
+    "/resources/dist/live-visitors.js": "/resources/dist/live-visitors.js",
+    "/resources/dist/admin-history.min.js": "/resources/dist/admin-history.min.js",
+    "/resources/dist/admin-tags.min.js": "/resources/dist/admin-tags.min.js",
+    "/resources/dist/global_alert.min.js": "/resources/dist/global_alert.min.js",
+    "/resources/js/plugins/prechat-form/field-settings.min.js": "/resources/js/plugins/prechat-form/field-settings.min.js",
+    "/resources/dist/base.css": "/resources/dist/base.css"
+}

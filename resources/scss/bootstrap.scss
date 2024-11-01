@@ -1,0 +1,59 @@
+:root {
+    --wschat-bg-primary: #2489DB;
+    --wschat-text-primary: #ffffff;
+    --wschat-bg-secondary: #f5f5f5;
+    --wschat-text-secondary: #5e5e5e;
+    --wschat-icon-color: #ffffff;
+    --wschat-text-gray: gray;
+    --wschat-font-family: 'Roboto', sans-serif;
+}
+@import "./fonts";
+
+@import "~bootstrap/scss/_functions";
+
+$primary: #0f78ce;
+// $secondary: #dcecf9;
+$btn-focus-box-shadow:0 0 0 0.25rem rgb(var(--wschat-icon-color), .25);
+$success:#2AE930;
+$enable-negative-margins: true;
+$box-shadow: 0 .5rem 1rem rgba(#5e5e5e, .15);
+$box-shadow-sm:0 0 .25rem rgba(#5e5e5e, .15);
+$box-shadow-lg:0 1rem 3rem rgba(#5e5e5e, .175);
+.elex_wschat_go_premium_color{
+    color: #008000 !important;
+
+}
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+.wschat-wrapper {
+    background-color: #fff;
+	font-family: var(--wschat-font-family);
+    --bs-light: #f5f5f5;
+    --bs-light-rga: 225, 225, 225;
+
+    .vh-95 {
+    	height: 95vh !important;
+    }
+
+    @import "~bootstrap/scss/bootstrap";
+
+	@import 'tag';
+
+    @import "utilities.scss";
+
+    &.wschat-pages {
+		@import 'admin-chat';
+    }
+
+    &.elex-ws-chat-wrap {
+    	@import "admin-widget.scss";
+	}
+
+	&.elex-ws-chat-wrap-widget {
+    	@import "widget.scss";
+	}
+
+}
+

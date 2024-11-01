@@ -1,0 +1,23 @@
+# Template PHP Build
+
+# This allows running Code_Sniffer
+
+image: php:7.2.22-alpine
+
+pipelines:
+  default:
+    - step:
+        name: Code_Sniffer
+        caches:
+          - composer-custom
+        script:
+          - apk update && apk add unzip
+          - apk add --no-cache libzip-dev && docker-php-ext-configure zip --with-libzip=/usr/include && docker-php-ext-install zip
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - echo "Running PHP_CodeSniffer"
+          - composer install --no-scripts
+          - composer run phpcs
+
+definitions:
+  caches:
+    composer-custom: /composer/cache

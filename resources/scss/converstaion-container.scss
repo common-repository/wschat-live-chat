@@ -1,0 +1,108 @@
+.elex-ws-chat-convo-body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    .elex-ws-chat-convo {
+        overflow-x: hidden;
+        overflow-y: auto;
+        .elex-ws-chat-convo-text-box {
+            max-width: 65%;
+            .chat-bubble {
+                padding: 12px;
+                background: var(--wschat-bg-secondary);
+                color: var(var(--wschat-text-secondary));
+                // margin: 5px 30px;
+                border-radius: 9px;
+                word-break: break-all;
+                position: relative;
+                animation: fadeIn 1s ease-in;
+                &--left {
+                    border-bottom-left-radius: 0px;
+                }
+                &--right {
+                    border-bottom-right-radius: 0px;
+                    .message-item-action-badges {
+                        display: none !important;
+                    }
+                }
+
+                
+
+                .attachment-links {
+                    background-color: #e1e1e1;
+
+                    .elex-wschat-video-attach-play-btn {
+                        z-index: 1;
+                        svg {
+                            width: 75px !important;
+                            height: 62px !important;
+                        }
+                    }
+                }
+            }
+            .elex-ws-chat-convo-pdf {
+                width: 20vw;
+                min-width: 200px;
+                max-width: 400px;
+                .elex-ws-chat-convo-img-bg {
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+            .elex-ws-chat-time {
+                position: absolute;
+                bottom: -15px;
+                right: 0;
+            }
+            &.active {
+                .chat-bubble {
+                    border: 1px solid $primary;
+                }
+            }
+        }
+        .chat-bubble.chat-bubble--right {
+            background-color: var(--wschat-bg-primary);
+            color: var(--wschat-text-primary);
+        }
+        .elex-ws-chat-untag {
+            right: -5px;
+            transform: translateX(100%);
+            width: 180px;
+            bottom: 0;
+            z-index: 9;
+        }
+        .elex-ws-chat-untag-buttons {
+            z-index: 2;
+            position: relative;
+            background-color: #fff;
+        }
+        .message-item-no-tag-found {
+            min-height: 100px;
+        }
+    }
+}
+
+#wschat_scroll_down_chat_panel {
+    bottom: 5px;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.elex-ws-chat-diff-inputs {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.15s ease-out;
+    overflow: hidden;
+    visibility: hidden;
+}
+.elex-ws-chat-diff-inputs.active {
+    bottom: 100%;
+    opacity: 1;
+    visibility: visible;
+}

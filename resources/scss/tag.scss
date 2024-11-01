@@ -1,0 +1,18 @@
+.tags-badge {
+	width: .75rem !important;
+	height: .75rem !important;
+	margin-right: .5rem;
+}
+
+.tag-list-group {
+	.list-group-item.active {
+		background-color: #eef6fc;
+		border-right: 0.25rem solid #2489db !important;
+		color: #333;
+	}
+}
+
+.tag-details-header {
+	background-color: #eef6fc;
+}
+

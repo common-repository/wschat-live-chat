@@ -1,0 +1,61 @@
+{
+  "name": "wschat",
+  "version": "2.0.0",
+  "description": "",
+  "main": "resources/js/user_chat.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch:admin-chat": "SOURCE=admin-chat mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/elextensions/wschat.git"
+  },
+  "keywords": [
+    "chat",
+    "wordpress",
+    "wordpress-plugin"
+  ],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/elextensions/wschat#readme",
+  "dependencies": {
+    "@joeattardi/emoji-button": "^4.6.0",
+    "@popperjs/core": "^2.11.5",
+    "@wordpress/element": "^4.6.0",
+    "bootstrap": "^5.1.3",
+    "js-cookie": "^2.2.1",
+    "laravel-echo": "^1.10.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.40",
+    "popper.js": "^1.16.1",
+    "pusher-js": "^7.0.3",
+    "react-avatar": "^5.0.3",
+    "react-bootstrap": "^2.7.0",
+    "react-icons": "^4.10.1",
+    "react-select": "^5.3.2",
+    "recordrtc": "^5.6.2",
+    "sweetalert2": "^11.7.0",
+    "tinycolor2": "^1.5.2",
+    "webrtc-adapter": "^8.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@wordpress/jest-preset-default": "^8.1.1",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "laravel-mix": "^6.0.18",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.6.0",
+    "webpack-livereload-plugin": "^3.0.2"
+  }
+}

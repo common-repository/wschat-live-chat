@@ -1,0 +1,179 @@
+// Video tutorial/codealong here: https://youtu.be/fCpw5i_2IYU
+
+@import './user-chat.scss';
+@import './toggle-switch.scss';
+@import './pre-chat.scss';
+// @import './nav-pills.scss';
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+.elex-wschat-note {
+  background: #f8e2d7;
+  border: 1px solid #f8641c;
+  border-left: 8px solid #f8641c;
+}
+.search-box {
+  background: #fafafa;
+  padding: 10px 13px;
+
+  .status-control {
+  	  .btn.btn-outline-primary:hover, input:checked + .btn.btn-outline-primary {
+  	  	  background-color: var(--wschat-bg-primary);
+  	  	  color: var(--wschat-text-primary);
+  	  }
+  	  .btn.btn-outline-primary {
+  	  	  border-color: var(--wschat-bg-primary);
+  	  	  color: var(--wschat-bg-primary);
+  	  }
+  }
+
+  .input-wrapper {
+    background: #fff;
+    border-radius: 40px;
+
+    i {
+      color: var(--wschat-icon-color);
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.table {
+  &.table-seperated {
+    border-collapse: separate;
+  }
+
+  &.table-border-v-space {
+    border-spacing: 0 0.5rem;
+  }
+
+  .bg-info{
+    background-color: #f0f7ff !important;
+  }
+
+  .bg-white{
+    background-color: #fff !important;
+  }
+}
+
+.os {
+  width: 16px;
+  height: 16px;
+  &.windows {
+    background-image: url('https://icons.iconarchive.com/icons/dakirby309/windows-8-metro/16/Folders-OS-Windows-8-Metro-icon.png');
+  }
+  &.android {
+    background-image: url('https://icons.iconarchive.com/icons/carlosjj/google-jfk/16/android-icon.png');
+  }
+  &.linux {
+    background-image: url('https://icons.iconarchive.com/icons/tatice/operating-systems/16/Linux-icon.png');
+  }
+  &.iphone {
+    background-image: url('https://icons.iconarchive.com/icons/musett/iphone-4/16/iPhone-White-Apple-icon.png');
+  }
+  &.ipad {
+    background-image: url('https://icons.iconarchive.com/icons/adidadidu/ipad/16/iPad-Front-Apple-Logo-icon.png');
+  }
+  &.apple, &.macOs, &.iOS {
+    background-image: url('https://icons.iconarchive.com/icons/tatice/cristal-intense/16/Apple-grey-icon.png');
+  }
+}
+
+
+.browser {
+  width: 16px;
+  height: 16px;
+  &.chrome {
+    background-image: url('https://icons.iconarchive.com/icons/dtafalonso/android-l/16/Chrome-icon.png');
+  }
+  &.firefox {
+    background-image: url('https://icons.iconarchive.com/icons/carlosjj/mozilla/16/Firefox-icon.png');
+  }
+  &.safari {
+    background-image: url('https://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/16/safari-icon.png');
+  }
+  &.edge, &.microsoft.edge {
+    background-image: url('https://cdn-icons-png.flaticon.com/16/5968/5968890.png');
+  }
+  &.explorer, &.internet.explorer {
+    background-image: url('https://cdn-icons-png.flaticon.com/16/220/220213.png');
+  }
+}
+
+
+.wschat-popup {
+	&.wschat-popup-right {
+		transition: all 0.3s ease-out;
+		right: -100%;
+		&.show {
+			right: 0;
+		}
+	}
+}
+
+.btn.btn-sm {
+	i.material-icons {
+		vertical-align: middle;
+		font-size: 1rem;
+	}
+}
+
+.tags-badge {
+	width: .75rem !important;
+	height: .75rem !important;
+	margin-right: .5rem;
+}
+
+.tag-list-group {
+	.list-group-item.active {
+		background-color: #eef6fc;
+		border-right: 0.25rem solid #2489db !important;
+		color: #333;
+	}
+}
+
+.tag-details-header {
+	background-color: #eef6fc;
+}
+
+.text-1rem {
+	font-size: 1rem;
+}
+
+.rotate-90 {
+	transform: rotate(90deg);
+}
+
+.message-item-action-badges > div:not(:last-child) {
+	@extend .border-end;
+}
+
+.tooltip-outline-primary.tooltip {
+  .tooltip-inner {
+      border: none;
+      box-shadow: 0px 0px 3px var(--wschat-bg-primary);
+      background: var(--wschat-bg-primary); 
+      color: var(--wschat-text-primary);
+      font-size: 0.7rem;
+  }
+  .tooltip-arrow::before {
+      display: none;
+  }
+}
+
+

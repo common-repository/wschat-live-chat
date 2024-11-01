@@ -1,0 +1,411 @@
+@import "pre-chat";
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 5px grey;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--wschat-bg-primary);
+    border-radius: 2px;
+}
+
+.xs {
+    font-size: 0.8rem;
+}
+
+// icon poistion
+.elex-ws-chat-widget-open-convo-box {
+    bottom: 80px;
+    right: 58px;
+    padding: 12px;
+    z-index: 99999;
+    box-shadow: 0px 3px 17px #1010104f;
+    .elex-wschat-unread-widget-badge {
+        border-radius: 10px;
+        min-height: 20px;
+        min-width: 20px;
+        font-size: 12px;
+        text-align: center;
+        color: #101010;
+        background-color: #ffb8b8;
+        border: 1px solid #dc3545;
+    }
+}
+
+// .wschat-bg-primary{
+//     background-color: var(--wschat-bg-primary);
+// }
+// .wschat-bg-secondary{
+//     background-color:var(--wschat-bg-secondary);
+// }
+// .wschat-text-primary{
+//     color: var(--wschat-text-primary);
+// }
+// .wschat-text-secondary{
+//     color: var(wschat-text-secondary);
+// }
+// .wschat-text-gray{
+//     color: var(--wschat-text-gray);
+// }
+// .wschat-icon-color *{
+//         stroke: var(--wschat-icon-color) !important;
+//         // fill:var(--wschat-icon-color) !important;
+// }
+// .wschat-icon-fill *{
+//     fill:var(--wschat-icon-color) !important;
+// }
+
+.elex-ws-chat-profile-pic {
+    width: 56px;
+}
+
+.rotate {
+    -webkit-transform: rotate(45deg);
+    transition: 0.4s ease;
+}
+
+.shadow {
+    box-shadow: 0px 0px 18px #1010108c;
+}
+
+.tooltip-white.tooltip {
+    .tooltip-inner {
+        border: 1px solid $primary;
+        background: #fff;
+        color: $primary;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
+    }
+    .tooltip-arrow::before {
+        display: none;
+    }
+}
+.tooltip-primary.tooltip {
+    .tooltip-inner {
+        box-shadow: 0px 0px 3px var(--wschat-bg-primary);
+        background: var(--wschat-bg-primary);
+        color: var(--wschat-text-primary);
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
+    }
+    .tooltip-arrow::before {
+        display: none;
+    }
+}
+
+.elex-ws-chat-widget-convo-box {
+    width: 384px;
+    height: 70vh;
+    max-height: 566px;
+    bottom: 80px;
+    right: 58px;
+    z-index: 10000;
+    box-shadow: 0px 0px 18px #1010108c;
+    display: flex;
+    flex-direction: column;
+
+    @import "converstaion-container";
+    .elex-ws-chat-convo-content {
+        .elex-ws-chat-convo {
+            overflow-x: hidden;
+            overflow-y: auto;
+            .elex-ws-chat-convo-text-box {
+                max-width: 65%;
+                .chat-bubble {
+                    padding: 12px;
+                    word-break: break-word;
+                    // margin: 5px 30px;
+                    border-radius: 9px;
+                    background-color: var(--wschat-bg-secondary);
+                    color: var(--wschat-text-secondary);
+                    position: relative;
+                    animation: fadeIn 1s ease-in;
+                    &--left {
+                        border-bottom-left-radius: 0px;
+                    }
+                    &--right {
+                        border-bottom-right-radius: 0px;
+                    }
+
+                    .attachment-links {
+                        background-color: #e1e1e1;
+
+                        .elex-wschat-video-attach-play-btn {
+                            z-index: 1;
+                            svg {
+                                width: 41px !important;
+                                height: 37px !important;
+                            }
+                        }
+                    }
+
+                }
+                .elex-ws-chat-convo-pdf {
+                    width: 174px;
+                    min-width: 150px;
+
+                    .elex-ws-chat-convo-img-bg {
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                .elex-ws-chat-time {
+                    position: absolute;
+                    bottom: -15px;
+                    right: 0;
+                }
+                .chat-bubble.chat-bubble--right {
+                    background-color: var(--wschat-bg-primary);
+                    color: var(--wschat-text-primary);
+                }
+                .elex-ws-chat-untag {
+                    right: -5px;
+                    transform: translateX(100%);
+                    width: 180px;
+                    bottom: 0;
+                    display: none;
+                    z-index: 2;
+                }
+                .elex-ws-chat-untag.active {
+                    width: 180px;
+                    bottom: 0;
+                    display: block;
+                }
+                .elex-ws-chat-untag-buttons {
+                    z-index: 2;
+                    position: relative;
+                    top: -20px;
+                    background-color: #fff;
+                }
+            }
+        }
+        .elex-ws-chat-convo.elex-ws-chat-convo-body-blur::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            z-index: 4;
+        }
+    }
+    .elex-ws-chat-diff-inputs {
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        opacity: 0;
+        transition: 0.15s ease-out;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .elex-ws-chat-diff-inputs.active {
+        bottom: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .elex-ws-chat-email {
+        width: 100%;
+        z-index: 99;
+        bottom: 0;
+        right: -100%;
+        height: auto;
+        transition: 0.4s ease;
+        background: $light;
+    }
+    .elex-ws-chat-email.active {
+        right: 0;
+        visibility: visible;
+        transition: 0.4s ease;
+    }
+
+    .elex-ws-chat-convo-attach-file {
+    	max-height: 300px;
+    	overflow-y: auto;
+    }
+
+    .elex-ws-chat-convo-attach-file-loader,
+    .elex-ws-chat-convo-attached-file {
+        display: none;
+    }
+
+    .elex-ws-chat-convo-attach-file {
+    	max-height: 300px;
+    	overflow-y: auto;
+    }
+
+    .elex-ws-chat-convo-attach-file-loader.active,
+    .elex-ws-chat-convo-attached-file.active {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .elex-ws-chat-widget-more-inputs {
+    //     left: 0;
+    //     display: flex;
+    //     transition: .4s ease;
+    //     align-items: flex-end;
+    //     bottom: -300px;
+    //     left: 0;
+    // }
+    // .elex-ws-chat-widget-more-inputs.active {
+    //     bottom: 100%;
+    // }
+
+    .elex-ws-chat-widget-feedback,
+    .elex-ws-chat-widget-email {
+        width: 100%;
+        z-index: 99;
+        bottom: 0;
+        right: -100%;
+        height: auto;
+        background: $light;
+        transition: 0.4s ease;
+    }
+    .elex-ws-chat-widget-feedback.active,
+    .elex-ws-chat-widget-email.active {
+        bottom: 0;
+        right: 0;
+    }
+    //
+    .elex-ws-chat-widget-convo-attach-file-loader,
+    .elex-ws-chat-widget-convo-attached-file {
+        display: none;
+    }
+    .elex-ws-chat-widget-convo-attach-file-loader.active,
+    .elex-ws-chat-widget-convo-attached-file.active {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.elex-ws-chat-main-content {
+    @import "converstaion-container.scss";
+    .elex-ws-chat-send-btn {
+        background: var(--wschat-bg-primary) !important;
+        color: var(--wschat-icon-color) !important;
+        svg * {
+            stroke: var(--wschat-icon-color) !important;
+        }
+
+        &.disabled {
+            color: #5e5e5e;
+            background: transparent;
+            border-radius: 10px !important;
+            svg * {
+                stroke: #5e5e5e !important;
+            }
+        }
+    }
+    .elex-ws-chat-diff-inputs {
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: 0.15s ease-out;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .elex-ws-chat-diff-inputs.active {
+        bottom: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+    .elex-ws-chat-email {
+        width: 100%;
+        z-index: 99;
+        bottom: 0;
+        right: -100%;
+        height: auto;
+        transition: 0.4s ease;
+        background: $light;
+    }
+    .elex-ws-chat-email.active {
+        right: 0;
+        visibility: visible;
+        transition: 0.4s ease;
+    }
+
+    .elex-ws-chat-convo-attach-file-loader,
+    .elex-ws-chat-convo-attached-file {
+        display: none;
+    }
+    .elex-ws-chat-convo-attach-file-loader.active,
+    .elex-ws-chat-convo-attached-file.active {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.message-item-text a {
+    color: #333;
+}
+
+.tooltip-outline-primary.tooltip {
+    .tooltip-inner {
+        border: none;
+        box-shadow: 0px 0px 3px var(--wschat-bg-primary);
+        background: var(--wschat-bg-primary);
+        color: var(--wschat-text-primary);
+        font-size: 0.7rem;
+    }
+    .tooltip-arrow::before {
+        display: none;
+    }
+}
+
+.camera-not-available-info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(215, 215, 215);
+    z-index: -2;
+}
+
+.camera-not-available-info::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255);
+    filter: blur(30px);
+    opacity: 1;
+    z-index: -1;
+}
+.camera-not-available-info {
+    z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .elex-ws-chat-widget-convo-box {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        z-index: 99999;
+        bottom: 0px;
+        right: 0px;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+    }
+}
